@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     background: #333;
     color: #fff;
 }
@@ -31,6 +31,11 @@ body {
 
 .navigation a:hover {
     text-decoration: underline;
+}
+.logo{
+    display: flex;
+    height: 100px;
+    gap: 1rem;
 }
 
 /* Footer styles */
