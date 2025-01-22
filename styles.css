@@ -51,7 +51,75 @@ body {
     height: 100px; /* Set the height of the logo */
     object-fit: contain; /* Ensure the image maintains its aspect ratio */
 }
+/* Description styles */
+#description .container-bmi-cal{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+#description .container-bmi-cal .text-overlay-cal {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-top: 65px;
+    margin-left: 195px;
+  }
+  #description .container-bmi-cal .text-overlay-bmi {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-top: 65px;
+    margin-left: 922px;
+  }
+#description img{
+    width: 350px;
+  height: 350px; 
+  margin-left: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  filter: brightness(60%);
+  display: block;
+  position: relative;
+  
+}
+#description  p{
+    max-width: 300px;
+}
 
+h1{
+    text-align: center;
+    margin-right: 80px;
+}
+
+#description .container-routine-program{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+#description .container-routine-program .text-overlay-routine {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-top: 65px;
+    margin-left: 195px;
+  }
+  #description .container-routine-program .text-overlay-program {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-top: 65px;
+    margin-left: 922px;
+  }
+  
 /* Footer styles */
 .footer {
     background: #333;
