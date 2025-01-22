@@ -144,8 +144,8 @@ h1{
 }
 
 /* Welcome section */
-.welcome div {
-  
+.welcome img{
+  width: 100%;
 }
 /*feature list  -Guntash*/
 .feature-list {
