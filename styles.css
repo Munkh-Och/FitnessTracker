@@ -77,5 +77,42 @@ body {
 
 /* Welcome section */
 .welcome div {
-    
+  
+}
+/*feature list  -Guntash*/
+.feature-list {
+    margin-top: 20px;
+}
+
+.feature-item {
+    background-color: #f4f4f9;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.feature-info h1 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.feature-info h3 {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
 }
