@@ -86,7 +86,7 @@ body {
   position: relative;
   
 }
-#description  p{
+#description .container-bmi-cal .container-routine-program p{
     max-width: 300px;
 }
 
