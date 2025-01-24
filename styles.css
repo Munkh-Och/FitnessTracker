@@ -39,7 +39,7 @@ body {
     font-size: 1.2rem;
 }
 
-.navigation #login, #signup{
+.navigation #login, #signup, #logout{
     padding: 10px 18px;
     border: 1px solid;
     border-radius: 24px;

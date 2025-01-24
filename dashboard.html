@@ -13,8 +13,7 @@
     <style>
         .container {
             width: 80%;
-            margin: 0 auto;
-            padding-top: 50px;
+            margin: 80px auto;
         }
         header {
             text-align: center;
@@ -87,23 +86,33 @@
             background-color: #3b8e58;
             border-radius: 5px;
         }
+        .welcome {
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
 
     </style>
 </head>
 
 <body>
-    <section class="header">
+    <section class="header"> <!-- navBar section (Jake)  -->
         <div class="logo">
-            <img src="images/logo-image.jfif" alt="logo">
-
+            <a href="#"><img src="images/Logo.png" alt="logo"></a>
+            <p id="fitness">Fitness Tracker</p>
         </div>
         <nav class="navigation">
             <ul>
-                <li><a href="home.html">Home Page</a></li>
-                <li><a href="#">Logout</a></li>
-
+                <li><a href="home.html" id="home">Home</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
             </ul>
         </nav>
+    </section>
+
+    <section id="welcome" class="welcome"><!--  welcome section(Keshav) -->
+        <div class="welcome">
+            <img src="images/Dashboard.png" alt="">
+        </div>
     </section>
 
     <div class="container">
