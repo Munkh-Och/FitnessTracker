@@ -335,6 +335,7 @@
                 <li><strong>Normal weight:</strong> BMI 18.5 to 24.9</li>
                 <li><strong>Overweight:</strong> BMI 25 to 29.9</li>
                 <li><strong>Obese:</strong> BMI 30 or higher</li>
+                <li><strong>**These ranges are general guidelines and might not apply equally to everyone</strong></li>
             </ul>
         </div>
     </section>
@@ -397,7 +398,8 @@
         let height = parseFloat(document.getElementById('user-height').innerText); // cm
         height = height / 100; // convert to meters
         let bmi = weight / (height * height);
-        document.getElementById('user-bmi').innerText = bmi.toFixed(2);
+        document.getElementById('user-bmi').innerText = bmi.toFixed(2); 
+        document.getElementById('user-bmi-value').innerText = bmi.toFixed(2);
     }
 
     // Display the current date
