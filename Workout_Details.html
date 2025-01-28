@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .workout-card {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            margin: 50px auto;
+        }
+
+        .workout-card img {
+            width: 40%;
+            height: 250px;
+            border-radius: 5px;
+            object-fit: cover; 
+        }
+
+        .workout-description {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-left: 20px;
+        }
+
+        .upcoming-next {
+            margin-top: auto; 
+            padding: 10px;
+            background-color: #e0f7fa;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        button{
+            margin-left: 25%;
+            margin-bottom: 30px;
+            width: 50%;
+            height: 80px;
+            font-size: larger;
+            font-weight: bold;
+            border: none;
+            background-color: #89beed;
+            border-radius: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="workout-title"></h1>
+    <div class="workout-container" id="workout-content">
+
+    </div>
+
+    <a href="home.html"><button>Complete</button></a>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const workoutId = urlParams.get('workout');
+
+        const workoutData = {
+            'w1': {
+                title: 'Newbie',
+                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                descriptions: [
+                    'Start with a 5-minute warm-up...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                ]
+            },
+            'w2': {
+                title: 'Rookie',
+                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                descriptions: [
+                    'Start with a 5-minute warm-up...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                ]
+            },
+            'w3': {
+                title: 'Amateur',
+                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                descriptions: [
+                    'Start with a 5-minute warm-up...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                ]
+            },
+            'w4': {
+                title: 'Enthusiast',
+                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                descriptions: [
+                    'Start with a 5-minute warm-up...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                ]
+            },
+            'w5': {
+                title: 'Competiator',
+                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                descriptions: [
+                    'Start with a 5-minute warm-up...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                ]
+            },
+            'w6': {
+                title: 'Athlete',
+                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                descriptions: [
+                    'Start with a 5-minute warm-up...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                ]
+            },
+            'w7': {
+                title: 'Pro',
+                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                descriptions: [
+                    'Start with a 5-minute warm-up...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                ]
+            },
+            'w8': {
+                title: 'Beast',
+                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                descriptions: [
+                    'Start with a 5-minute warm-up...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                    'Add some dynamic stretching...',
+                ]
+            }
+        };
+
+        const workout = workoutData[workoutId];
+
+        document.getElementById('workout-title').textContent = workout.title;
+
+        const contentDiv = document.getElementById('workout-content');
+
+        workout.images.forEach((image, index) => {
+            const workoutCard = document.createElement('div');
+            workoutCard.classList.add('workout-card');
+
+            const img = document.createElement('img');
+            img.src = `images/${image}`;
+            img.alt = `Image for ${workout.title}`;
+            workoutCard.appendChild(img);
+
+            const descriptionDiv = document.createElement('div');
+            descriptionDiv.classList.add('workout-description');
+            const description = document.createElement('p');
+            description.textContent = workout.descriptions[index];
+            descriptionDiv.appendChild(description);
+
+            const upcomingNextDiv = document.createElement('div');
+            upcomingNextDiv.classList.add('upcoming-next');
+            upcomingNextDiv.textContent = "Next workout: Full Body Circuit";
+
+            descriptionDiv.appendChild(upcomingNextDiv);
+            workoutCard.appendChild(descriptionDiv);
+
+            contentDiv.appendChild(workoutCard);
+        });
+    </script>
+
+</body>
+</html>
