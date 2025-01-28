@@ -382,12 +382,33 @@
         let newWeight = prompt("Enter your new weight:", document.getElementById('user-weight').innerText);
         let newHeight = prompt("Enter your new height:", document.getElementById('user-height').innerText);
         let newGoal = prompt("Enter your new goal:", document.getElementById('user-goal').innerText);
-
-        // Update the profile info with new values
-        if (newAge) document.getElementById('user-age').innerText = newAge;
-        if (newWeight) document.getElementById('user-weight').innerText = newWeight;
-        if (newHeight) document.getElementById('user-height').innerText = newHeight;
-        if (newGoal) document.getElementById('user-goal').innerText = newGoal;
+        if (newAge) {
+        newAge = parseInt(newAge);
+        if (isNaN(newAge) || newAge < 1 || newAge > 150) {
+            alert("Invalid age. Please enter a number between 1 and 150.");
+            return;
+        }
+        document.getElementById('user-age').innerText = newAge;
+        }
+        if (newWeight) {
+            newWeight = parseInt(newWeight);
+            if (isNaN(newWeight) || newWeight <= 0) {
+                alert("Invalid weight. Please enter a number greater than 0.");
+                return;
+            }
+            document.getElementById('user-weight').innerText = newWeight;
+        }
+        if (newHeight) {
+            newHeight = parseInt(newHeight);
+            if (isNaN(newHeight) || newHeight < 50 || newHeight > 300) {
+                alert("Invalid height. Please enter a number between 50 and 300.");
+                return;
+            }
+            document.getElementById('user-height').innerText = newHeight;
+        }
+        if (newGoal) {
+            document.getElementById('user-goal').innerText = newGoal;
+        }
 
         // Recalculate BMI after updating weight and height
         calculateBMI();
