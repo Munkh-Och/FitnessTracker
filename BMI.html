@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <section class="header"> <!-- navBar section (Jake)  -->
+        <div class="logo">
+            <a href="home.html" class="d-flex text-decoration-none" >
+                <img src="images/Logo.png" alt="logo">
+                <p id="fitness">Fitness Tracker</p>
+            </a>
+            
+        </div>
+        <nav class="navigation">
+            <ul>
+
+                <li><a href="home.html" id="home">Home</a></li>
+                <li><a href="#footer" id="contact">Contact</a></li>
+                <li><a href="Login_SignUp.html" id="login">Login</a></li>
+                <li><a href="Login_SignUp.html" id="signup">Sign Up</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section class="bg-dark">
+        <div style="max-width: 800px;text-align: left;" class="container text-white my-1 mx-auto p-3 text-start" >
+            <h2>What is BMI?</h2>
+            <p>Body Mass Index (BMI) is a simple numerical measure used to assess whether a person has a healthy body weight for their height. It is commonly used as a general health indicator, though it does not account for factors such as muscle mass, bone density, or fat distribution.</p>
+            <p>BMI is a general guideline and does not differentiate between muscle and fat mass. It may not be accurate for athletes, older adults, or individuals with higher muscle mass. Always consult a healthcare professional for a comprehensive health assessment.</p>
+        </div>
+    </section>
+    <section class="main bg-dark text-white row my-10 mx-auto p-4">
+        <div class="container col-3 mx-auto">
+            <form id="bmiForm" class="d-flex flex-column gap-2">
+                <input type="text" name="height" id="height" placeholder="Enter your height in centimeters">
+                <input type="text" name="weight" id="weight" placeholder="Enter your weight in kilograms">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="container col-3 mx-auto shadow-on-hover p-3">
+            <h4>Your BMI:</h4>
+            <p id="bmi"></p>
+        </div>
+    </section>
+    <section>
+        <div class="bmi-image text-center p-3">
+            <img src="images/bmi-range.png" alt="BMI Meter" class="bmi-image">
+        </div>
+    </section>
+    <section id="footer" class="footer"><!-- John -->
+        <footer class="footer">
+           <h3> Contact us: </h3>
+            <ul class="links">
+                <li>
+                    <a href="https://github.com/Munkh-Och/FitnessTracker" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="mailto:example@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+    </section>
+</body>
+<script>
+    document.getElementById("bmiForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get input values
+        let height = document.getElementById("height").value.trim();
+        let weight = document.getElementById("weight").value.trim();
+        let bmiOutput = document.getElementById("bmi");
+
+        // Validate inputs
+        if (!height || !weight) {
+            alert("Please fill in both fields.");
+            return;
+        }
+        if (!/^\d+$/.test(height) || !/^\d+$/.test(weight)) {
+            alert("Please enter valid integer values.");
+            return;
+        }
+
+        // Convert values to numbers
+        height = parseInt(height);
+        weight = parseInt(weight);
+
+        if (height <= 0 || weight <= 0) {
+            alert("Height and weight must be greater than zero.");
+            return;
+        }
+
+        // Calculate BMI
+        let bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+
+        // Display result
+        bmiOutput.textContent = `${bmi}`;
+    });
+</script>
+</html>
