@@ -72,7 +72,7 @@
                 <div class="value" id="steps">8,250</div>
                 <div class="unit">Steps</div>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 82%" id="steps-progress"></div>
+                    <div class="progress" style="width: 82.5%" id="steps-progress"></div>
                 </div>
                 <!-- Target Steps -->
                 <div class="target">
@@ -87,7 +87,7 @@
                 <div class="value" id="calories">500</div>
                 <div class="unit">kcal</div>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 50%" id="calories-progress"></div>
+                    <div class="progress" style="width: 83.33%" id="calories-progress"></div>
                 </div>
                 <!-- Target Calories -->
                 <div class="target">
@@ -102,7 +102,7 @@
                 <div class="value" id="distance">6.2</div>
                 <div class="unit">km</div>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 60%" id="distance-progress"></div>
+                    <div class="progress" style="width: 77.5%" id="distance-progress"></div>
                 </div>
                 <!-- Target Distance -->
                 <div class="target">
@@ -245,23 +245,32 @@
     function setTarget(type) {
         // Prompt user to enter the new target value
         let targetValue = prompt(`Enter your target for ${type}:`);
-        if (targetValue) {
-            targetValue = parseInt(targetValue);
+
+        // Validate that the input is a valid number (integer or float)
+        let isValidNumber = /^-?\d+(\.\d+)?$/.test(targetValue); // Regex for integer or float
+
+        if (isValidNumber) {
+            targetValue = parseFloat(targetValue.replace(/,/g, '')); // Remove commas and parse as float
             if (type === 'steps') {
                 document.getElementById('target-steps').innerText = formatNumber(targetValue);
-                let progress = Math.min(parseInt(document.getElementById('steps').innerText) / targetValue * 100, 100);
+                let progress = Math.min(parseInt(document.getElementById('steps').innerText.replace(/,/g, '')) / targetValue * 100, 100);
                 document.getElementById('steps-progress').style.width = progress + '%';
             } else if (type === 'calories') {
                 document.getElementById('target-calories').innerText = formatNumber(targetValue);
-                let progress = Math.min(parseInt(document.getElementById('calories').innerText) / targetValue * 100, 100);
+                let progress = Math.min(parseInt(document.getElementById('calories').innerText.replace(/,/g, '')) / targetValue * 100, 100);
                 document.getElementById('calories-progress').style.width = progress + '%';
             } else if (type === 'distance') {
-                document.getElementById('target-distance').innerText = formatNumber(targetValue);
-                let progress = Math.min(parseFloat(document.getElementById('distance').innerText) / targetValue * 100, 100);
+                document.getElementById('target-distance').innerText = parseFloat(targetValue).toFixed(1);
+                let progress = Math.min(parseFloat(document.getElementById('distance').innerText.replace(/,/g, '')) / targetValue * 100, 100);
                 document.getElementById('distance-progress').style.width = progress + '%';
             }
+        } else {
+            alert('Please enter a valid number (integer or float).');
         }
     }
+
+
+
 </script>
 
 </body>
