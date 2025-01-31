@@ -1,0 +1,139 @@
+html {
+    /* scroll-padding-top: 7rem; Adjust this based on the height of your navbar */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    align-items: center;    
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    #fitness{
+        font-size: 30px;
+        font-weight: 500;
+        font-family: serif;
+        color: black;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(0, 0, 0, 0.1);
+        margin-top: auto;
+    }
+}
+.navigation #contact{
+    margin-right: 250px;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.navigation a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.navigation #login, #signup, #logout{
+    padding: 10px 18px;
+    border: 1px solid;
+    border-radius: 24px;
+    margin-left: 0;
+    font-weight: bold;
+    font-size: large;
+    background-color: black;
+    color: white;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+.logo{
+    display: flex;
+    height: 85px;
+    gap: 1rem;
+    
+}
+.logo img {
+    height: 100px; /* Set the height of the logo */
+    object-fit: contain; /* Ensure the image maintains its aspect ratio */
+}
+
+.calculator {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 1000px;
+    margin-left:0%;
+    
+}
+
+h1 {
+    padding-top: 40px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.result {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Footer styles */
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 7px;
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.links a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
