@@ -35,7 +35,7 @@
     </div>
     <div class="age">
         <label for="age">Age</label> <br>
-        <input type="number" id="age">
+        <input type="text" id="age">
     </div>
     <button onclick="suggestPlan()">Get Plan</button>
     <p id="planResult"></p>
@@ -143,19 +143,44 @@
             });
         });
        </script>
-      <script>
+     <script>
         function suggestPlan() {
-            let age = parseInt(document.getElementById("age").value);
-            let weight = parseFloat(document.getElementById("weight").value);
+            let age = document.getElementById("age").value;
+            let weight = document.getElementById("weight").value;
             let plan = "";
-    
-            if (isNaN(age) || isNaN(weight) || age <= 0 || weight <= 0) {
-                document.getElementById("planResult").innerText = "Please enter valid age and weight.";
+        
+            // Check if both age and weight are empty
+            if (age === "" && weight === "") {
+                document.getElementById("planResult").innerText = "Please fill age and weight for a plan suggestion.";
                 return;
             }
-
-              // Determine base plan by age
-              if (age < 15) {
+    
+            // Check if age or weight is empty
+           
+            if (weight === "") {
+                document.getElementById("planResult").innerText = "Please fill in your weight.";
+                return;
+            }
+            if (isNaN(weight) || weight <= 0) {
+                document.getElementById("planResult").innerText = "Invalid weight. Please enter a valid number.";
+                return;
+            }
+            if (age === "") {
+                document.getElementById("planResult").innerText = "Please fill in your age.";
+                return;
+            }
+            if (isNaN(age) || age <= 0) {
+                document.getElementById("planResult").innerText = "Invalid age. Please enter a valid number.";
+                return;
+            }
+        
+    
+            // Convert values to integers after validation
+            age = parseInt(age);
+            weight = parseFloat(weight);
+    
+            // Determine base plan by age
+            if (age < 15) {
                 plan = "Newbie";
             } else if (age < 20) {
                 plan = "Beginner";
@@ -181,9 +206,10 @@
             } else if (weight < 60) {
                 plan += " - Endurance Focus";
             }
-    
+        
             document.getElementById("planResult").innerText = "Your Workout Plan: " + plan;
         }
     </script>
+    
 </body>
 </html>
