@@ -6,6 +6,14 @@
     <title>Workout Details</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        *{
+            text-align: center;
+        }
+        body{
+            background-color: rgba(33, 37, 41, 255);
+            color: white;
+            padding-top: 25px;
+        }
         .workout-card {
             display: flex;
             justify-content: space-between;
@@ -14,8 +22,8 @@
             max-width: 900px;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9;
+            background-color: rgba(33, 37, 41, 255);
+            box-shadow: 0 10px 40px rgb(122, 114, 114);
             margin: 50px auto;
         }
 
@@ -44,7 +52,6 @@
         }
 
         button{
-            margin-left: 25%;
             margin-bottom: 30px;
             width: 50%;
             height: 80px;
@@ -55,6 +62,15 @@
             border-radius: 10px;
             color: white;
         }
+
+        button:hover{
+            background-color:  #65a8e2;
+        }
+
+        .reps {
+            font-weight: bold;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -64,7 +80,7 @@
 
     </div>
 
-    <a href="home.html"><button>Complete</button></a>
+    <a href="Workout_Plans.html"><button>Complete</button></a>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
@@ -73,123 +89,233 @@
         const workoutData = {
             'w1': {
                 title: 'Newbie',
-                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                images: ['workout_images/bodyweight_squats.jpeg', 'workout_images/pushups.jpg', 'workout_images/plank.jpg', 'workout_images/glute_bridge.jpeg', 'workout_images/lat_pulldown.jpeg'],
+                exercises: [
+                    'Bodyweight Squats',
+                    'Push-ups',
+                    'Plank',
+                    'Glute Bridges',
+                    'Lat Pulldown'
+                ],
                 descriptions: [
-                    'Start with a 5-minute warm-up...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
+                    'Stand with your feet shoulder-width apart. Bend your knees and lower your hips as if you’re sitting in a chair, keeping your back straight. Go as low as you can while maintaining control, then push through your heels to return to the starting position. This exercise helps build strength in the legs and glutes, improving lower body endurance.',
+                    'Start in a plank position with your hands slightly wider than shoulder-width. Lower your body by bending your elbows until your chest almost touches the floor, then push back up. If needed, drop to your knees to reduce intensity. Push-ups are excellent for building upper body strength, focusing on the chest, shoulders, and triceps.',
+                    'Lie face down and raise your body on your toes and forearms, keeping your body in a straight line from head to heels. Engage your core and hold the position without letting your hips sag. Planks are great for strengthening the core, improving stability and overall posture.',
+                    'Lie on your back with your knees bent and feet flat on the floor. Lift your hips toward the ceiling, squeezing your glutes at the top, and hold for a second. Lower your hips back down to the floor. Glute bridges target the glutes, hamstrings, and core, helping with hip stability and lower back strength.',
+                    'Sit at the Lat Pulldown machine and grip the bar wider than shoulder-width. Pull the bar down to your chest, keeping your chest lifted, then slowly release it back up. Lat Pulldown helps to strengthen the back and arms, targeting the latissimus dorsi.'
+                ],
+                reps: [
+                    '3 sets of 12-15 reps',
+                    '3 sets of 8-10 reps',
+                    '20-30 seconds, 3 sets',
+                    '3 sets of 12-15 reps',
+                    '3 sets of 10-12 reps'
                 ]
             },
             'w2': {
-                title: 'Rookie',
-                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                title: 'Beginner',
+                images: ['workout_images/warmup.jpeg', 'workout_images/dynamic_streching.jpeg', 'workout_images/leg_press.jpeg', 'workout_images/seated_row.jpeg', 'workout_images/bodyweight_squat.jpeg'],
+                exercises: [
+                    'Warm-up',
+                    'Dynamic Stretching',
+                    'Leg Press Machine',
+                    'Seated Row Machine',
+                    'Bodyweight Squats'
+                ],
                 descriptions: [
-                    'Start with a 5-minute warm-up...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
+                    'Start with a 5-minute warm-up by walking or light jogging to get your heart rate up and muscles loosened. A proper warm-up prepares your body for more intense activity, reducing the risk of injury during exercise.',
+                    'Add some dynamic stretching such as leg swings or arm circles. Dynamic stretching helps to improve range of motion, increase blood flow to muscles, and enhance flexibility before your workout.',
+                    'Sit at the Leg Press machine, place your feet on the platform shoulder-width apart, and push the weight upward until your legs are fully extended. Slowly lower the weight back to the starting position. Leg press works the quads, hamstrings, and glutes.',
+                    'Sit on the Seated Row machine with your feet secured. Grip the handles and pull them towards your torso, keeping your back straight, then slowly release. This exercise targets the upper back, shoulders, and arms, improving posture and strength.',
+                    'Stand with your feet shoulder-width apart. Bend your knees and lower your hips as if you’re sitting in a chair, keeping your back straight. Go as low as you can while maintaining control, then push through your heels to return to the starting position.'
+                ],
+                reps: [
+                    '5 minutes',
+                    '20 seconds',
+                    '3 sets of 12-15 reps',
+                    '3 sets of 10-12 reps',
+                    '3 sets of 12-15 reps'
                 ]
             },
             'w3': {
-                title: 'Amateur',
-                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                title: 'Intermediate',
+                images: ['workout_images/warmup2.jpeg', 'workout_images/dynamic_streching.jpeg', 'workout_images/pushup2.jpeg', 'workout_images/plank.jpg', 'workout_images/leg_curl.jpeg'],
+                exercises: [
+                    'Warm-up',
+                    'Dynamic Stretching',
+                    'Push-ups',
+                    'Plank',
+                    'Leg Curl Machine'
+                ],
                 descriptions: [
-                    'Start with a 5-minute warm-up...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
+                    'Start with a 5-minute warm-up to get your blood flowing and muscles primed for the workout ahead. A good warm-up will help prevent injury and increase performance during the session.',
+                    'Perform dynamic stretching for 20 seconds, focusing on full-body movements that increase flexibility and mobility. This step is crucial to prepare your muscles for the exercises that follow.',
+                    'Do push-ups by starting in a high plank position, lower your body to the floor, then push back up. Push-ups engage the chest, shoulders, triceps, and core, making them a great full-body strength exercise.',
+                    'Hold a plank position with your body in a straight line, supported by your forearms and toes. Planks strengthen the core, improve balance, and support better posture over time.',
+                    'Sit on the Leg Curl machine with your knees aligned with the pivot point. Curl your legs back as far as possible, focusing on squeezing your hamstrings, then slowly return to the starting position.'
+                ],
+                reps: [
+                    '5 minutes',
+                    '20 seconds',
+                    '15 reps',
+                    '30 seconds',
+                    '3 sets of 12-15 reps'
                 ]
             },
             'w4': {
-                title: 'Enthusiast',
-                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                title: 'Advanced',
+                images: ['workout_images/warmup3.jpeg', 'workout_images/dynamic_streching2.jpeg', 'workout_images/burpees.jpeg', 'workout_images/pullups.jpeg', 'workout_images/chest_press.jpeg'],
+                exercises: [
+                    'Warm-up',
+                    'Dynamic Stretching',
+                    'Burpees',
+                    'Pull-ups',
+                    'Chest Press Machine'
+                ],
                 descriptions: [
-                    'Start with a 5-minute warm-up...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
+                    'Start with a 5-minute warm-up to elevate your heart rate and increase mobility in preparation for more challenging movements. A good warm-up will improve performance and prevent injuries.',
+                    'Add dynamic stretching to loosen up your muscles and improve flexibility. Focus on full-body movements to activate all major muscle groups before moving into more strenuous exercises.',
+                    'Do burpees by starting in a standing position, then squat down, kick your feet back into a plank, perform a push-up, and jump back up. Burpees are a full-body workout that targets strength, speed, and endurance.',
+                    'Perform pull-ups by gripping a bar and pulling your chin above the bar before lowering your body back down. Pull-ups are an excellent upper body exercise that focuses on the back, biceps, and shoulders.',
+                    'Sit at the Chest Press machine with your hands gripping the handles. Push the handles forward until your arms are extended, then slowly return to the starting position. This machine targets the chest, shoulders, and triceps.'
+                ],
+                reps: [
+                    '5 minutes',
+                    '20 seconds',
+                    '15 reps',
+                    '10 reps',
+                    '3 sets of 12-15 reps'
                 ]
             },
             'w5': {
-                title: 'Competiator',
-                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                title: 'Pro',
+                images: ['workout_images/warmup4.jpeg', 'workout_images/dynamic_streching3.jpeg', 'workout_images/squat_jumps.jpeg', 'workout_images/treadmil_sprint.jpeg', 'workout_images/lat_pulldown.jpeg'],
+                exercises: [
+                    'Warm-up',
+                    'Dynamic Stretching',
+                    'Squat Jumps',
+                    'Treadmill Sprints',
+                    'Lat Pulldown Machine'
+                ],
                 descriptions: [
-                    'Start with a 5-minute warm-up...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
+                    'Start with a 5-minute warm-up to activate your muscles and get your heart rate up. This will help prepare your body for the more intense exercises that follow, enhancing performance and reducing the risk of injury.',
+                    'Perform dynamic stretching to improve flexibility and activate key muscles before jumping into the more physically demanding exercises.',
+                    'Do squat jumps by lowering into a squat and then explosively jumping upwards. Squat jumps help to build power, endurance, and strength in the lower body, particularly in the legs and glutes.',
+                    'Set the treadmill to a fast pace or sprint setting. Alternate between 30 seconds of sprinting and 30 seconds of walking or light jogging. This high-intensity interval training (HIIT) workout improves cardiovascular fitness and fat-burning.',
+                    'Sit at the Lat Pulldown machine and grip the bar wider than shoulder-width. Pull the bar down to your chest, keeping your chest lifted, then slowly release it back up.'
+                ],
+                reps: [
+                    '5 minutes',
+                    '20 seconds',
+                    '15 reps',
+                    '10 intervals of 30 seconds sprint, 30 seconds rest',
+                    '3 sets of 10-12 reps'
                 ]
             },
             'w6': {
-                title: 'Athlete',
-                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                title: 'Elite',
+                images: ['workout_images/warmup2.jpeg', 'workout_images/dynamic_streching.jpeg', 'workout_images/deadlift.jpeg', 'workout_images/barbell_row.jpeg', 'workout_images/leg_press2.jpeg'],
+                exercises: [
+                    'Warm-up',
+                    'Dynamic Stretching',
+                    'Deadlifts',
+                    'Barbell Row',
+                    'Machine Leg Press'
+                ],
                 descriptions: [
-                    'Start with a 5-minute warm-up...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
+                    'Perform a 5-minute warm-up by walking or cycling to get your body prepared for heavy lifting and prevent injury.',
+                    'Do dynamic stretches to improve flexibility and activate key muscles, focusing on the lower back, legs, and shoulders.',
+                    'Perform deadlifts with proper form to target the lower back, glutes, hamstrings, and traps. Deadlifts are a full-body movement that builds power and strength.',
+                    'Barbell rows are a great exercise for the upper back, biceps, and traps. Pull the barbell toward your waist while maintaining a stable posture and controlled movement.',
+                    'Machine leg press works your quads, hamstrings, and glutes. Focus on controlled reps and proper form to maximize muscle engagement.'
+                ],
+                reps: [
+                    '5 minutes',
+                    '20 seconds',
+                    '3 sets of 10 reps',
+                    '3 sets of 8 reps',
+                    '3 sets of 12 reps'
                 ]
             },
             'w7': {
-                title: 'Pro',
-                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                title: 'Champion',
+                images: ['workout_images/warmup.jpeg', 'workout_images/dynamic_streching2.jpeg', 'workout_images/box_jump.jpeg', 'workout_images/pullups2.jpeg', 'workout_images/seated_chest_press.jpeg'],
+                exercises: [
+                    'Warm-up',
+                    'Dynamic Stretching',
+                    'Box Jumps',
+                    'Pull-ups',
+                    'Seated Chest Press'
+                ],
                 descriptions: [
-                    'Start with a 5-minute warm-up...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
+                    'Warm-up for 5 minutes to increase blood flow and prepare your muscles for the high-intensity workout ahead.',
+                    'Dynamic stretching should focus on full-body movements such as arm swings, leg swings, and torso twists.',
+                    'Box jumps are an explosive movement that targets the lower body and improves power, agility, and strength.',
+                    'Perform pull-ups with proper form, using a wide grip to target the upper back and shoulders.',
+                    'Seated Chest Press focuses on building strength in the chest, shoulders, and triceps, working the same muscle groups as the traditional bench press.'
+                ],
+                reps: [
+                    '5 minutes',
+                    '20 seconds',
+                    '3 sets of 10 reps',
+                    '3 sets of 8-10 reps',
+                    '3 sets of 12-15 reps'
                 ]
             },
             'w8': {
                 title: 'Beast',
-                images: ['gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg', 'gym.jpeg'],
+                images: ['workout_images/warmup5.jpeg', 'workout_images/dynamic_streching3.jpeg', 'workout_images/kettlebell_swings.jpeg', 'workout_images/barbell_bench_press.jpeg', 'workout_images/squats.jpeg'],
+                exercises: [
+                    'Warm-up',
+                    'Dynamic Stretching',
+                    'Kettlebell Swings',
+                    'Barbell Bench Press',
+                    'Squats'
+                ],
                 descriptions: [
-                    'Start with a 5-minute warm-up...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
-                    'Add some dynamic stretching...',
+                    'Start with a 5-minute warm-up to get your heart rate up and muscles ready for heavy lifting.',
+                    'Perform dynamic stretches to improve flexibility and reduce stiffness in key muscle groups.',
+                    'Kettlebell swings are a great full-body exercise that improves power and explosiveness, targeting the glutes, hamstrings, and core.',
+                    'Barbell bench press targets the chest, shoulders, and triceps, helping to build upper body strength.',
+                    'Squats help build strength in the legs and glutes while improving form and technique.'
+                ],
+                reps: [
+                    '5 minutes',
+                    '20 seconds',
+                    '3 sets of 15 reps',
+                    '3 sets of 8-10 reps',
+                    '3 sets of 12-15 reps'
                 ]
             }
         };
 
         const workout = workoutData[workoutId];
+        document.getElementById('workout-title').innerText = workout.title;
 
-        document.getElementById('workout-title').textContent = workout.title;
-
-        const contentDiv = document.getElementById('workout-content');
-
-        workout.images.forEach((image, index) => {
-            const workoutCard = document.createElement('div');
-            workoutCard.classList.add('workout-card');
+        const content = document.getElementById('workout-content');
+        workout.exercises.forEach((exercise, index) => {
+            const card = document.createElement('div');
+            card.classList.add('workout-card');
 
             const img = document.createElement('img');
-            img.src = `images/${image}`;
-            img.alt = `Image for ${workout.title}`;
-            workoutCard.appendChild(img);
+            img.src = workout.images[index];
 
-            const descriptionDiv = document.createElement('div');
-            descriptionDiv.classList.add('workout-description');
-            const description = document.createElement('p');
-            description.textContent = workout.descriptions[index];
-            descriptionDiv.appendChild(description);
+            const description = document.createElement('div');
+            description.classList.add('workout-description');
 
-            const upcomingNextDiv = document.createElement('div');
-            upcomingNextDiv.classList.add('upcoming-next');
-            upcomingNextDiv.textContent = "Next workout: Full Body Circuit";
+            const title = document.createElement('h3');
+            title.innerText = exercise;
 
-            descriptionDiv.appendChild(upcomingNextDiv);
-            workoutCard.appendChild(descriptionDiv);
+            const desc = document.createElement('p');
+            desc.innerText = workout.descriptions[index];
 
-            contentDiv.appendChild(workoutCard);
+            const reps = document.createElement('p');
+            reps.classList.add('reps');
+            reps.innerText = `Reps: ${workout.reps[index]}`;
+
+            description.append(title, desc, reps);
+            card.append(img, description);
+            content.appendChild(card);
         });
     </script>
 

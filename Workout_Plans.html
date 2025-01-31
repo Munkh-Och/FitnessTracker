@@ -6,8 +6,9 @@
     <title> My Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- <link rel="stylesheet" href="dashboardStyles.css"> -->
     <link rel="stylesheet" href="Workout_Plan.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    
 </head>
 
 <body>
@@ -18,115 +19,103 @@
     </div>
     <nav class="navigation">
         <ul>
-            <li><a href="home.html" id="home">Home</a></li>
-            <li><a href="#" id="logout">Logout</a></li>
+            <li><a href="home.html" id="logout">Home</a></li>
         </ul>
     </nav>
 </section>
 
 <section id="welcome" class="welcome">
-    <div class="welcome">
-        <img src="images/Dashboard.png" alt="">
+    <div class="welcome" >
+        <h1>Find Your Personalized Plan</h1>
     </div>
+</section>
+
+<section id="suggestions">
+    <div class="weight">
+        <label for="weight">Weight (kg)</label> <br>
+        <input type="text" id="weight">
+    </div>
+    <div class="age">
+        <label for="age">Age</label> <br>
+        <input type="text" id="age">
+    </div>
+    <button onclick="suggestPlan()">Get Plan</button>
+    <p id="planResult"></p>
 </section>
 
 <div class="container">
     <div class="workout" id="w1">
         <div class="img">
-            <img src="images/gym.jpeg" alt="">
+            <img src="images/newbie.jpg" alt="">
         </div>
         <div class="description">
             <h1>Newbie</h1> <br>
-            <p>Start with a 5-minute warm-up of light jogging or dynamic stretches. 
-                Move into a 15-minute full-body circuit: 10 push-ups, 15 squats, and 
-                a 20-second plank, repeating 3 times. Finish with a 5-minute cool-down 
-                of gentle stretches to relax your muscles.</p>
+            <p>This beginner-friendly workout covers your entire body with simple, effective exercises. It gradually builds strength and endurance without requiring any equipment.</p>
         </div>
     </div>
     <div class="workout" id="w2">
         <div class="img">
-            <img src="images/gym.jpeg" alt="">
+            <img src="images/beginner.jpeg" alt="">
         </div>
         <div class="description">
-            <h1>Rookie</h1> <br>
-            <p>Start with a 5-minute warm-up of light jogging or dynamic stretches. 
-                Move into a 15-minute full-body circuit: 10 push-ups, 15 squats, and 
-                a 20-second plank, repeating 3 times. Finish with a 5-minute cool-down 
-                of gentle stretches to relax your muscles.</p>
+            <h1>Beginner</h1> <br>
+            <p>This workout is perfect for beginners, focusing on simple and effective full-body exercises. It helps build strength gradually with no equipment needed.</p>
         </div>
     </div>
     <div class="workout" id="w3">
         <div class="img">
-            <img src="images/gym.jpeg" alt="">
+            <img src="images/Intermediate.jpeg" alt="">
         </div>
         <div class="description">
-            <h1>Amateur</h1> <br>
-            <p>Start with a 5-minute warm-up of light jogging or dynamic stretches. 
-                Move into a 15-minute full-body circuit: 10 push-ups, 15 squats, and 
-                a 20-second plank, repeating 3 times. Finish with a 5-minute cool-down 
-                of gentle stretches to relax your muscles.</p>
+            <h1>Intermediate</h1> <br>
+            <p>This intermediate workout adds more intensity and variety to challenge your strength and endurance. It balances muscle growth and conditioning for steady progress.</p>
         </div>
     </div>
     <div class="workout" id="w4">
         <div class="img">
-            <img src="images/gym.jpeg" alt="">
+            <img src="images/advanced.jpeg" alt="">
         </div>
         <div class="description">
-            <h1>Enthusiast</h1> <br>
-            <p>Start with a 5-minute warm-up of light jogging or dynamic stretches. 
-                Move into a 15-minute full-body circuit: 10 push-ups, 15 squats, and 
-                a 20-second plank, repeating 3 times. Finish with a 5-minute cool-down 
-                of gentle stretches to relax your muscles.</p>
+            <h1>Advanced</h1> <br>
+            <p>This advanced workout pushes your limits with high-intensity exercises and complex movements. It’s designed to maximize strength, endurance, and overall performance.</p>
         </div>
     </div>
 </div>
 <div class="container">
     <div class="workout" id="w5">
         <div class="img">
-            <img src="images/gym.jpeg" alt="">
+            <img src="images/pro.jpeg" alt="">
         </div>
         <div class="description">
-            <h1>Competiator</h1> <br>
-            <p>Start with a 5-minute warm-up of light jogging or dynamic stretches. 
-                Move into a 15-minute full-body circuit: 10 push-ups, 15 squats, and 
-                a 20-second plank, repeating 3 times. Finish with a 5-minute cool-down 
-                of gentle stretches to relax your muscles.</p>
+            <h1>Pro</h1> <br>
+            <p>This workout refines your strength and endurance with precision, pushing you past plateaus for peak performance.</p>
         </div>
     </div>
     <div class="workout" id="w6">
         <div class="img">
-            <img src="images/gym.jpeg" alt="">
+            <img src="images/elite.jpeg" alt="">
         </div>
         <div class="description">
-            <h1>Athlete</h1> <br>
-            <p>Start with a 5-minute warm-up of light jogging or dynamic stretches. 
-                Move into a 15-minute full-body circuit: 10 push-ups, 15 squats, and 
-                a 20-second plank, repeating 3 times. Finish with a 5-minute cool-down 
-                of gentle stretches to relax your muscles.</p>
+            <h1>Elite</h1> <br>
+            <p>Designed for the highly dedicated, this routine demands power, agility, and relentless consistency to reach the next level.</p>
         </div>
     </div>
     <div class="workout" id="w7">
         <div class="img">
-            <img src="images/gym.jpeg" alt="">
+            <img src="images/champion.jpg" alt="">
         </div>
         <div class="description">
-            <h1>Pro</h1> <br>
-            <p>Start with a 5-minute warm-up of light jogging or dynamic stretches. 
-                Move into a 15-minute full-body circuit: 10 push-ups, 15 squats, and 
-                a 20-second plank, repeating 3 times. Finish with a 5-minute cool-down 
-                of gentle stretches to relax your muscles.</p>
+            <h1>Champion</h1> <br>
+            <p>Only the strongest survive—this intense program builds unstoppable strength, endurance, and mental toughness.</p>
         </div>
     </div>
     <div class="workout" id="w8">
         <div class="img">
-            <img src="images/gym.jpeg" alt="">
+            <img src="images/beast.jpeg" alt="">
         </div>
         <div class="description">
             <h1>Beast</h1> <br>
-            <p>Start with a 5-minute warm-up of light jogging or dynamic stretches. 
-                Move into a 15-minute full-body circuit: 10 push-ups, 15 squats, and 
-                a 20-second plank, repeating 3 times. Finish with a 5-minute cool-down 
-                of gentle stretches to relax your muscles.</p>
+            <p>The ultimate test of willpower and resilience, this brutal workout transforms you into a powerhouse of raw strength and dominance. 💪🔥</p>
         </div>
     </div>
 </div>
@@ -156,5 +145,73 @@
             });
         });
        </script>
+     <script>
+        function suggestPlan() {
+            let age = document.getElementById("age").value;
+            let weight = document.getElementById("weight").value;
+            let plan = "";
+        
+            // Check if both age and weight are empty
+            if (age === "" && weight === "") {
+                document.getElementById("planResult").innerText = "Please fill age and weight for a plan suggestion.";
+                return;
+            }
+    
+            // Check if age or weight is empty
+           
+            if (weight === "") {
+                document.getElementById("planResult").innerText = "Please fill in your weight.";
+                return;
+            }
+            if (isNaN(weight) || weight <= 20) {
+                document.getElementById("planResult").innerText = "Invalid weight. Please enter a valid number.";
+                return;
+            }
+            if (age === "") {
+                document.getElementById("planResult").innerText = "Please fill in your age.";
+                return;
+            }
+            if (isNaN(age) || age <= 5 || age >= 100) {
+                document.getElementById("planResult").innerText = "Invalid age. Please enter a valid number.";
+                return;
+            }
+        
+    
+            // Convert values to integers after validation
+            age = parseInt(age);
+            weight = parseFloat(weight);
+    
+            // Determine base plan by age
+            if (age < 15) {
+                plan = "Newbie";
+            } else if (age < 20) {
+                plan = "Beginner";
+            } else if (age < 25) {
+                plan = "Intermediate";
+            } else if (age < 30) {
+                plan = "Advanced";
+            } else if (age < 32) {
+                plan = "Champion";
+            } else if (age < 35) {
+                plan = "Beast";
+            } else if (age < 40) {
+                plan = "Elite";
+            } else if (age < 50) {
+                plan = "Pro";
+            } else {
+                plan = "Beginner";
+            }
+    
+            // Adjust plan slightly based on weight
+            if (weight > 90) {
+                plan += " - Strength Focus";
+            } else if (weight < 60) {
+                plan += " - Endurance Focus";
+            }
+        
+            document.getElementById("planResult").innerText = "Your Workout Plan: " + plan;
+        }
+    </script>
+    
 </body>
 </html>
