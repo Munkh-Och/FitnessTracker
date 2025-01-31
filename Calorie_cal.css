@@ -1,34 +1,31 @@
+/* Global Styles */
 html {
     /* scroll-padding-top: 7rem; Adjust this based on the height of your navbar */
 }
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
-    align-items: center;
 }
 
-/* Header styles */
+/* Header Styles */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem;
-
-    #fitness {
+    #fitness{
         font-size: 30px;
         font-weight: 500;
         font-family: serif;
         color: black;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(0, 0, 0, 0.1);
-        margin-top: auto;
+        margin: auto;
     }
 }
-
-.navigation #contact {
+.navigation #contact{
     margin-right: 250px;
 }
 
@@ -45,9 +42,15 @@ body {
     font-size: 1.2rem;
 }
 
-.navigation #login,
-#signup,
-#logout {
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+.navigation #contact {
+    margin-right: 250px;
+}
+
+.navigation .auth-btn {
     padding: 10px 18px;
     border: 1px solid;
     border-radius: 24px;
@@ -58,22 +61,15 @@ body {
     color: white;
 }
 
-.navigation a:hover {
-    text-decoration: underline;
-}
-
 .logo {
     display: flex;
     height: 85px;
     gap: 1rem;
-
 }
 
 .logo img {
     height: 100px;
-    /* Set the height of the logo */
     object-fit: contain;
-    /* Ensure the image maintains its aspect ratio */
 }
 
 /* Calorie Calculator */
