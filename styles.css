@@ -16,20 +16,17 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem;
+    #fitness{
+        font-size: 30px;
+        font-weight: 500;
+        font-family: serif;
+        color: black;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(0, 0, 0, 0.1);
+        margin: auto;
+    }
 }
-
-.header #fitness {
-    font-size: 30px;
-    font-weight: 500;
-    font-family: serif;
-    color: black;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: auto;
-}
-
-.navigation {
-    display: flex;
-    justify-content: flex-end;
+.navigation #contact{
+    margin-right: 250px;
 }
 
 .navigation ul {
