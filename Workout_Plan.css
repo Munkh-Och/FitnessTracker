@@ -1,38 +1,37 @@
-*{
-    margin: 0;padding: 0;box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
     background-color: rgba(33, 37, 41, 255);
     color: white;
-    border-color: white;
 }
-.header{
-    background-color: white;
+
+.header {
+    background-color: rgb(245, 242, 242);
 }
-.welcome{
+
+.welcome {
     margin-top: 30px;
     font-size: 30px;
     text-align: center;
 }
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
+
 #suggestions {
     max-width: 500px;
     height: 300px;
     margin: 40px auto;
     padding: 20px;
     border-radius: 10px;
-    background: #f8f9fa;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/gym.jpeg);
-}
-
-.container .workout:hover {
-    box-shadow: 0 10px 40px white;
-    border-radius: 15px;
 }
 
 #suggestions div {
@@ -61,6 +60,7 @@ button {
     margin-top: 15px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 button:hover {
@@ -73,30 +73,34 @@ button:hover {
     color: white;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
     gap: 35px;
     margin: 50px 0;
 }
-.container .workout{
+
+.container .workout {
     padding: 10px;
     border-radius: 10px;
     width: 20rem;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-.container img{
+
+.container .workout:hover {
+    box-shadow: 0 10px 40px white;
+    transform: translateY(-5px);
+    border-radius: 15px;
+}
+
+.container img {
     width: 100%;
     height: 260px;
     object-fit: cover;
     border-radius: 10px;
 }
-.container .workout .description{
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-.container .description h1{
-    /* text-align: center; */
+
+.container .description h1 {
     margin: auto;
 }
