@@ -98,13 +98,8 @@ function validateForm(firstname, lastname, email) {
         return;
     }
 
-    let userExists = false;
-    for (let i = 0; i < users.length; i++) {
-        if (users[i].email === email) {
-            userExists = true;
-            break;
-        }
-    }
+    let userExists = users.some(user => user.email === email);
+
 
     if (userExists) {
         document.getElementById("message").textContent = "Email is already registered!";
@@ -116,7 +111,7 @@ function validateForm(firstname, lastname, email) {
     document.getElementById("message").textContent = "Signup successful! You can now log in.";
     document.getElementById("message").style.color = "green";
 
-    document.getElementById("signupFormElement").reset();
+    resetForm("signupFormElement");
     console.log(users);
 }
 
@@ -124,13 +119,7 @@ function validateForm(firstname, lastname, email) {
     const email = document.getElementById("loginEmail").value;
     const password = document.getElementById("loginPassword").value;
 
-    let user = null;
-    for (let i = 0; i < users.length; i++) {
-        if (users[i].email === email && users[i].password === password) {
-            user = users[i];
-            break;
-        }
-    }
+    let userExists = users.some(user => user.email === email);
 
     if (user) {
         document.getElementById("message").textContent = `Welcome, ${user.firstname} ${user.lastname}!`;
@@ -141,7 +130,7 @@ function validateForm(firstname, lastname, email) {
         document.getElementById("message").style.color = "red";
     }
 
-    document.getElementById("loginFormElement").reset();
+    resetForm("signupFormElement");
 }
 
 
@@ -161,6 +150,8 @@ function validateForm(firstname, lastname, email) {
         loginForm.style.display = "none";
         document.getElementById("message").textContent = "";
     });
+	
+	
 </script>
 </body>
 </html>
